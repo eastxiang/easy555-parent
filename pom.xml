@@ -11,4 +11,10 @@
     <name>main</name>
     <url>www.easy555.com</url> 
     
+    <modules>
+    	<module>easy555-common</module>
+    	<module>easy555-uc</module>
+    	<module>easy555-uc-web</module>
+    </modules>
+    
 </project>
