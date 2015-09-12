@@ -12,9 +12,10 @@
     <url>www.easy555.com</url> 
     
     <modules>
-    	<module>easy555-common</module>
-    	<module>easy555-uc</module>
-    	<module>easy555-uc-web</module>
+    	<module>e5-common</module>
+    	<module>uc-dao</module>
+        <module>uc-service</module>
+    	<module>uc-web</module>
     </modules>
     
 </project>
