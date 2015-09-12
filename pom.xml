@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.easy555</groupId>
-    <artifactId>easy555-parent</artifactId>
-    <version>0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>parent</name>
-    <url>www.easy555.com</url> 
-    
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.easy555</groupId>
+	<artifactId>easy555-parent</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>parent</name>
+	<url>www.easy555.com</url>
+
+	<dependencies>
+		<!-- web相关jar包 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- <dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${jsp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>${standard.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency> -->
+	</dependencies>
+
+	<properties>
+	
+	   <servlet.version>3.0.1</servlet.version>
+        <jsp.version>2.2</jsp.version>
+        <jstl.version>1.2</jstl.version>
+        <standard.version>1.1.2</standard.version>
+	
+	</properties>
+
 </project>
