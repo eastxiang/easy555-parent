@@ -14,13 +14,26 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>easy555 uc-web</name>
 	<url>www.easy555.com</url>
+	
 	<dependencies>
 
 	</dependencies>
+	
 	<build>
 		<finalName>uc-web</finalName>
+		
+		<!-- 只有设置这个才能替换变量 -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
- 
+
 	<profiles>
 		<profile>
 			<id>development</id>
@@ -28,7 +41,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<log.dir>/logs/e5</log.dir>
+				<log.dir>logs/e5</log.dir>
 			</properties>
 		</profile>
 	</profiles>
