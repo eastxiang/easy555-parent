@@ -42,6 +42,26 @@
 	</filter-mapping>
 	<!-- 设置servlet编码结束 -->
 
+	<!-- 记录访问日志，比如审计之类的可用 -->
+	<filter>
+		<filter-name>AccessLogFilter</filter-name>
+		<filter-class>com.easy555.common.web.filter.AccessLogFilter</filter-class>
+		<async-supported>true</async-supported>
+		<init-param>
+			<param-name>blackListURL</param-name>
+			<param-value>/static/**,*.js,*.css,*.jpg,*.gif,*.png,*.ico,/admin/monitor/druid/**</param-value>
+		</init-param>
+		<init-param>
+			<param-name>whiteListURL</param-name>
+			<param-value>/**</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>AccessLogFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
 	<!-- 设置 spring mvc 开始 -->
 	<servlet>
 		<servlet-name>spring</servlet-name>
@@ -60,7 +80,7 @@
 	<!-- 设置 spring mvc 结束 -->
 
 	<!-- 错误页面映射 -->
-	<!-- <error-page>
+	<error-page>
 		<error-code>404</error-code>
 		<location>/WEB-INF/jsp/error/error.jsp</location>
 	</error-page>
@@ -79,5 +99,5 @@
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>
 		<location>/WEB-INF/jsp/error/error.jsp</location>
-	</error-page> -->
+	</error-page>
 </web-app>

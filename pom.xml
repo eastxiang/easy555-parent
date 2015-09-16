@@ -13,6 +13,7 @@
     
     <modules>
     	<module>e5-common</module>
+        <module>e5-common-web</module>
     	<module>uc-dao</module>
         <module>uc-service</module>
     	<module>uc-web</module>

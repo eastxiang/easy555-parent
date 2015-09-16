@@ -14,14 +14,22 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>easy555 uc-web</name>
 	<url>www.easy555.com</url>
-	
-	<dependencies>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.easy555</groupId>
+			<artifactId>e5-common-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>uc-web</finalName>
-		
+
 		<!-- 只有设置这个才能替换变量 -->
 		<resources>
 			<resource>
