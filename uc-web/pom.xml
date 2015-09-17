@@ -19,12 +19,15 @@
 		<dependency>
 			<groupId>com.easy555</groupId>
 			<artifactId>e5-common-web</artifactId>
-		</dependency>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency> 
 
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
+			<groupId>com.easy555</groupId>
+			<artifactId>uc-service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency> 
+
 	</dependencies>
 
 	<build>

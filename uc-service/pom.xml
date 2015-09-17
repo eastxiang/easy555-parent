@@ -15,6 +15,10 @@
 	<url>www.easy555.com</url>
 
 	<dependencies>
-		
+		<dependency>
+			<groupId>com.easy555</groupId>
+			<artifactId>uc-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
