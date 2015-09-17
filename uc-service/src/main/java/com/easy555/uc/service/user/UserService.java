@@ -46,8 +46,8 @@ public class UserService extends BaseService<User, Long> {
         return (UserRepository) baseRepository;
     }
 
-    @Autowired
-    private UserStatusHistoryService userStatusHistoryService;
+//    @Autowired
+//    private UserStatusHistoryService userStatusHistoryService;
 
     @Autowired
     private PasswordService passwordService;
@@ -90,10 +90,11 @@ public class UserService extends BaseService<User, Long> {
     }
 
     public UserOrganizationJob findUserOrganizationJob(UserOrganizationJob userOrganizationJob) {
-        return getUserRepository().findUserOrganization(
-                userOrganizationJob.getUser(),
-                userOrganizationJob.getOrganizationId(),
-                userOrganizationJob.getJobId());
+//        return getUserRepository().findUserOrganization(
+//                userOrganizationJob.getUser(),
+//                userOrganizationJob.getOrganizationId(),
+//                userOrganizationJob.getJobId());
+    	return null;
     }
 
     public User findByUsername(String username) {
@@ -121,7 +122,7 @@ public class UserService extends BaseService<User, Long> {
 
     public User changePassword(User user, String newPassword) {
         user.randomSalt();
-        user.setPassword(passwordService.encryptPassword(user.getUsername(), newPassword, user.getSalt()));
+//        user.setPassword(passwordService.encryptPassword(user.getUsername(), newPassword, user.getSalt()));
         update(user);
         return user;
     }
@@ -129,7 +130,7 @@ public class UserService extends BaseService<User, Long> {
     public User changeStatus(User opUser, User user, UserStatus newStatus, String reason) {
         user.setStatus(newStatus);
         update(user);
-        userStatusHistoryService.log(opUser, user, newStatus, reason);
+//        userStatusHistoryService.log(opUser, user, newStatus, reason);
         return user;
     }
 
@@ -178,14 +179,14 @@ public class UserService extends BaseService<User, Long> {
             throw new UserNotExistsException();
         }
 
-        passwordService.validate(user, password);
+//        passwordService.validate(user, password);
 
         if (user.getStatus() == UserStatus.blocked) {
             UserLogUtils.log(
                     username,
                     "loginError",
                     "user is blocked!");
-            throw new UserBlockedException(userStatusHistoryService.getLastReason(user));
+           // throw new UserBlockedException(userStatusHistoryService.getLastReason(user));
         }
 
         UserLogUtils.log(
@@ -276,7 +277,8 @@ public class UserService extends BaseService<User, Long> {
      * @return
      */
     public Page<UserOrganizationJob> findUserOrganizationJobOnNotExistsOrganizationOrJob(Pageable pageable) {
-        return getUserRepository().findUserOrganizationJobOnNotExistsOrganizationOrJob(pageable);
+        //return getUserRepository().findUserOrganizationJobOnNotExistsOrganizationOrJob(pageable);
+    	return null;
     }
 
     /**
@@ -285,6 +287,7 @@ public class UserService extends BaseService<User, Long> {
      * @return
      */
     public void deleteUserOrganizationJobOnNotExistsUser() {
-        getUserRepository().deleteUserOrganizationJobOnNotExistsUser();
+        //getUserRepository().deleteUserOrganizationJobOnNotExistsUser();
+    	
     }
 }

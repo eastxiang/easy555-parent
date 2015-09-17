@@ -4,7 +4,7 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
     <!-- realm -->
     <!--depends-on="userRepository, userLastOnlineRepository, userStatusHistoryRepository, springUtils" -->
@@ -61,6 +61,7 @@
         <!-- see spring-config-task.xml-->
         <property name="scheduler" ref="scheduler"/>
     </bean>
+    
     <!-- 会话管理器 -->
     <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.OnlineWebSessionManager">
         <property name="globalSessionTimeout" value="${shiro.session.globalSessionTimeout}"></property>
@@ -84,7 +85,6 @@
         <property name="sessionManager" ref="sessionManager"/>
         <property name="rememberMeManager" ref="rememberMeManager"/>
     </bean>
-
 
     <!-- filter -->
     <!--替换默认的form 验证过滤器-->

@@ -28,13 +28,12 @@ import com.easy555.common.entity.enums.BooleanEnum;
 import com.easy555.common.entity.search.Searchable;
 import com.easy555.common.web.bind.annotation.CurrentUser;
 import com.easy555.common.web.bind.annotation.PageableDefaults;
-import com.easy555.common.web.bind.annotation.SearchableDefaults;
 import com.easy555.common.web.controller.BaseCRUDController;
 import com.easy555.common.web.validate.ValidateResponse;
 import com.easy555.uc.dao.user.entity.User;
 import com.easy555.uc.dao.user.entity.UserOrganizationJob;
 import com.easy555.uc.dao.user.entity.UserStatus;
-import com.easy555.uc.dao.user.service.UserService;
+import com.easy555.uc.service.user.UserService;
 
 /**
  * <p>User: Zhang Kaitao
@@ -291,6 +290,4 @@ public class UserController extends BaseCRUDController<User, Long> {
 
         return response.result();
     }
-
-
 }

@@ -5,13 +5,14 @@
  */
 package org.apache.shiro.web.filter.authc;
 
-import com.easy555.uc.dao.user.entity.User;
-import com.easy555.uc.dao.user.service.UserService;
+import javax.servlet.ServletRequest;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.servlet.ServletRequest;
+import com.easy555.uc.dao.user.entity.User;
+import com.easy555.uc.service.user.UserService;
 
 /**
  * 基于几点修改：

@@ -5,10 +5,15 @@
  */
 package org.apache.shiro.realm;
 
-import com.easy555.common.repository.support.SimpleBaseRepositoryFactoryBean;
-import com.easy555.uc.dao.user.entity.User;
 
-import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.ExcessiveAttemptsException;
+import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -17,6 +22,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
+import com.easy555.common.repository.support.SimpleBaseRepositoryFactoryBean;
+import com.easy555.uc.dao.user.entity.User;
+import com.easy555.uc.service.user.exception.UserBlockedException;
+import com.easy555.uc.service.user.exception.UserException;
+import com.easy555.uc.service.user.exception.UserNotExistsException;
+import com.easy555.uc.service.user.exception.UserPasswordNotMatchException;
+import com.easy555.uc.service.user.exception.UserPasswordRetryLimitExceedException;
+
 /**
  * <p>User: Zhang Kaitao
  * <p>Date: 13-3-12 下午9:05
@@ -24,10 +37,10 @@ import org.springframework.context.ApplicationContext;
  */
 public class UserRealm extends AuthorizingRealm {
 
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private UserAuthService userAuthService;
+//    @Autowired
+//    private UserService userService;
+//    @Autowired
+//    private UserAuthService userAuthService;
 
     private static final Logger log = LoggerFactory.getLogger("es-error");
 
@@ -45,11 +58,11 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String username = (String) principals.getPrimaryPrincipal();
-        User user = userService.findByUsername(username);
+//        User user = userService.findByUsername(username);
 
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        authorizationInfo.setRoles(userAuthService.findStringRoles(user));
-        authorizationInfo.setStringPermissions(userAuthService.findStringPermissions(user));
+//        authorizationInfo.setRoles(userAuthService.findStringRoles(user));
+//        authorizationInfo.setStringPermissions(userAuthService.findStringPermissions(user));
 
         return authorizationInfo;
     }
@@ -107,7 +120,7 @@ public class UserRealm extends AuthorizingRealm {
 
         User user = null;
         try {
-            user = userService.login(username, password);
+//            user = userService.login(username, password);
         } catch (UserNotExistsException e) {
             throw new UnknownAccountException(e.getMessage(), e);
         } catch (UserPasswordNotMatchException e) {

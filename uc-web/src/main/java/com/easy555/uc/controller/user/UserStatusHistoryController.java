@@ -5,14 +5,13 @@
  */
 package com.easy555.uc.controller.user;
 
-import com.easy555.common.web.controller.BaseCRUDController;
-import com.easy555.uc.dao.user.entity.UserStatus;
-import com.easy555.uc.dao.user.entity.UserStatusHistory;
-import com.easy555.uc.dao.user.service.UserStatusHistoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.easy555.common.web.controller.BaseCRUDController;
+import com.easy555.uc.dao.user.entity.UserStatus;
+import com.easy555.uc.dao.user.entity.UserStatusHistory;
 
 /**
  * <p>User: Zhang Kaitao

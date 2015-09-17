@@ -5,10 +5,10 @@
  */
 package org.apache.shiro.web.session.mgt;
 
-import com.google.common.collect.Lists;
-import com.easy555.common.Constants;
-import com.easy555.uc.dao.user.entity.UserOnline;
-import com.easy555.uc.dao.user.service.UserOnlineService;
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.shiro.ShiroConstants;
 import org.apache.shiro.session.ExpiredSessionException;
@@ -23,9 +23,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
+import com.easy555.common.Constants;
+import com.easy555.uc.dao.user.entity.UserOnline;
+import com.easy555.uc.service.user.UserOnlineService;
+import com.google.common.collect.Lists;
 
 /**
  * 为OnlineSession定制的Web Session Manager

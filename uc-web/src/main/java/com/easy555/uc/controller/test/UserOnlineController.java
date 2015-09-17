@@ -3,13 +3,8 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
-package com.easy555.uc.controller.user;
+package com.easy555.uc.controller.test;
 
-import com.easy555.common.entity.search.Searchable;
-import com.easy555.common.utils.MessageUtils;
-import com.easy555.common.web.controller.BaseCRUDController;
-import com.easy555.uc.dao.user.entity.UserOnline;
-import com.easy555.uc.dao.user.service.UserOnlineService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.session.mgt.OnlineSession;
@@ -19,6 +14,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.easy555.common.entity.search.Searchable;
+import com.easy555.common.utils.MessageUtils;
+import com.easy555.common.web.controller.BaseCRUDController;
+import com.easy555.uc.dao.user.entity.UserOnline;
 
 /**
  * <p>User: Zhang Kaitao

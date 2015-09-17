@@ -1,4 +1,4 @@
-package com.easy555.uc.controller;
+package com.easy555.uc.controller.user;
  
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-
 public class IndexController { 
 	
 	@RequestMapping("index") 
@@ -16,5 +15,4 @@ public class IndexController {
 		
         return "index";
     } 
- 
 }

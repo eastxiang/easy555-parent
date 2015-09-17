@@ -136,7 +136,9 @@ public class LogUtils {
 
 
     protected static String getUsername() {
-        return (String) SecurityUtils.getSubject().getPrincipal();
+    	//TODO xiangdong
+        //return (String) SecurityUtils.getSubject().getPrincipal();
+    	return "xd";
     }
 
     public static Logger getAccessLog() {

@@ -5,12 +5,11 @@
  */
 package com.easy555.uc.controller.user;
 
-import com.easy555.common.web.controller.BaseCRUDController;
-import com.easy555.uc.dao.user.entity.UserLastOnline;
-import com.easy555.uc.dao.user.service.UserLastOnlineService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.easy555.common.web.controller.BaseCRUDController;
+import com.easy555.uc.dao.user.entity.UserLastOnline;
 
 /**
  * <p>User: Zhang Kaitao
