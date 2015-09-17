@@ -5,15 +5,6 @@
  */
 package com.easy555.uc.controller.user;
 
-import com.easy555.common.Constants;
-import com.easy555.common.entity.enums.BooleanEnum;
-import com.easy555.common.web.controller.BaseController;
-import com.easy555.uc.dao.user.entity.User;
-import com.easy555.uc.dao.user.entity.UserStatus;
-import com.easy555.uc.dao.user.service.PasswordService;
-import com.easy555.uc.dao.user.service.UserLastOnlineService;
-import com.easy555.uc.dao.user.service.UserService;
-import com.easy555.common.web.bind.annotation.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.easy555.common.Constants;
+import com.easy555.common.entity.enums.BooleanEnum;
+import com.easy555.common.web.bind.annotation.CurrentUser;
+import com.easy555.common.web.controller.BaseController;
+import com.easy555.uc.dao.user.entity.User;
+import com.easy555.uc.dao.user.entity.UserStatus;
+import com.easy555.uc.service.user.PasswordService;
+import com.easy555.uc.service.user.UserLastOnlineService;
+import com.easy555.uc.service.user.UserService;
 
 /**
  * 登录用户的个人信息
