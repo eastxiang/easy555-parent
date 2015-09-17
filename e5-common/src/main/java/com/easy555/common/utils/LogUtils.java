@@ -136,10 +136,7 @@ public class LogUtils {
 
 
     protected static String getUsername() {
-    	//TODO shiro add;
-    	return "xiang";
-    	
-//    	return (String) SecurityUtils.getSubject().getPrincipal();
+        return (String) SecurityUtils.getSubject().getPrincipal();
     }
 
     public static Logger getAccessLog() {

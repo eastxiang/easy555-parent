@@ -20,13 +20,19 @@
 			<groupId>com.easy555</groupId>
 			<artifactId>e5-common-web</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency> 
+		</dependency>
+
+		<dependency>
+			<groupId>com.easy555</groupId>
+			<artifactId>uc-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.easy555</groupId>
 			<artifactId>uc-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency> 
+		</dependency>
 
 	</dependencies>
 
