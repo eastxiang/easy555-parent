@@ -115,7 +115,6 @@
         base-package:扫描的包
         repository-impl-postfix:仓库自定义实现类型的后缀  自动扫描并添加到接口的实现
         factory-class 仓库接口的实现工厂
-
     -->
     <jpa:repositories
             base-package="com.easy555.**.repository"
@@ -123,9 +122,7 @@
             factory-class="com.easy555.common.repository.support.SimpleBaseRepositoryFactoryBean"
             entity-manager-factory-ref="entityManagerFactory"
             transaction-manager-ref="transactionManager">
-
     </jpa:repositories>
-
 
     <!--事务管理器配置-->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -153,7 +150,6 @@
         <aop:pointcut id="txPointcut" expression="execution(* com.easy555..service..*+.*(..)) or execution(* com.easy555..task..*+.*(..))"/>
         <aop:advisor id="txAdvisor" advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config>
-
 
     <!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
@@ -199,9 +195,9 @@
     </bean>
 
     <import resource="spring-config-cache.xml"/>
-    <!-- <import resource="spring-config-shiro.xml"/>
+    <import resource="spring-config-shiro.xml"/>
     <import resource="spring-config-task.xml"/>
-    <import resource="spring-config-monitor.xml"/> -->
+    <import resource="spring-config-monitor.xml"/>
    <!--  <import resource="spring-speed-up.xml"/> -->
 
 </beans>
