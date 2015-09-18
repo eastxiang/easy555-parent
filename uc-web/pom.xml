@@ -36,7 +36,38 @@
 
 	<build>
 		<finalName>uc-web</finalName>
-
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>native2ascii-maven-plugin</artifactId>
+				<version>1.0-alpha-1</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>native2ascii</goal>
+						</goals>
+						<configuration>
+							<encoding>UTF-8</encoding>
+							<src>src/main/messages</src>
+							<dest>target/${project.artifactId}/WEB-INF/classes</dest>
+							<includes>**/*.*</includes>
+						</configuration>
+					</execution>
+				</executions>
+				<!-- native2ascii 使用的tools.jar -->
+				<dependencies>
+					<dependency>
+						<groupId>com.sun</groupId>
+						<artifactId>tools</artifactId>
+						<version>${jdk.version}</version>
+						<scope>system</scope>
+						<systemPath>${java.home}/../lib/tools.jar</systemPath>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		
 		<!-- 只有设置这个才能替换变量 xiangdong -->
 		<resources>
 			<resource>
