@@ -6,14 +6,11 @@
 package com.easy555.uc.service.user;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -21,10 +18,8 @@ import com.easy555.common.entity.search.SearchOperator;
 import com.easy555.common.entity.search.Searchable;
 import com.easy555.common.service.BaseService;
 import com.easy555.uc.dao.user.entity.User;
-import com.easy555.uc.dao.user.entity.UserOrganizationJob;
 import com.easy555.uc.dao.user.entity.UserStatus;
 import com.easy555.uc.dao.user.repository.UserRepository;
-import com.easy555.uc.service.user.exception.UserBlockedException;
 import com.easy555.uc.service.user.exception.UserNotExistsException;
 import com.easy555.uc.service.user.exception.UserPasswordNotMatchException;
 import com.easy555.uc.service.user.utils.UserLogUtils;
@@ -71,31 +66,31 @@ public class UserService extends BaseService<User, Long> {
     @Override
     public User update(User user) {
 
-        List<UserOrganizationJob> localUserOrganizationJobs = user.getOrganizationJobs();
-        for (int i = 0, l = localUserOrganizationJobs.size(); i < l; i++) {
-
-            UserOrganizationJob localUserOrganizationJob = localUserOrganizationJobs.get(i);
-            //设置关系 防止丢失 报 A collection with cascade="all-delete-orphan" was no longer referenced by the owning entity instance
-            localUserOrganizationJob.setUser(user);
-
-            UserOrganizationJob dbUserOrganizationJob = findUserOrganizationJob(localUserOrganizationJob);
-            if (dbUserOrganizationJob != null) {//出现在先删除再添加的情况
-                dbUserOrganizationJob.setJobId(localUserOrganizationJob.getJobId());
-                dbUserOrganizationJob.setOrganizationId(localUserOrganizationJob.getOrganizationId());
-                dbUserOrganizationJob.setUser(localUserOrganizationJob.getUser());
-                localUserOrganizationJobs.set(i, dbUserOrganizationJob);
-            }
-        }
+//        List<UserOrganizationJob> localUserOrganizationJobs = user.getOrganizationJobs();
+//        for (int i = 0, l = localUserOrganizationJobs.size(); i < l; i++) {
+//
+//            UserOrganizationJob localUserOrganizationJob = localUserOrganizationJobs.get(i);
+//            //设置关系 防止丢失 报 A collection with cascade="all-delete-orphan" was no longer referenced by the owning entity instance
+//            localUserOrganizationJob.setUser(user);
+//
+//            UserOrganizationJob dbUserOrganizationJob = findUserOrganizationJob(localUserOrganizationJob);
+//            if (dbUserOrganizationJob != null) {//出现在先删除再添加的情况
+//                dbUserOrganizationJob.setJobId(localUserOrganizationJob.getJobId());
+//                dbUserOrganizationJob.setOrganizationId(localUserOrganizationJob.getOrganizationId());
+//                dbUserOrganizationJob.setUser(localUserOrganizationJob.getUser());
+//                localUserOrganizationJobs.set(i, dbUserOrganizationJob);
+//            }
+//        }
         return super.update(user);
     }
 
-    public UserOrganizationJob findUserOrganizationJob(UserOrganizationJob userOrganizationJob) {
-//        return getUserRepository().findUserOrganization(
-//                userOrganizationJob.getUser(),
-//                userOrganizationJob.getOrganizationId(),
-//                userOrganizationJob.getJobId());
-    	return null;
-    }
+//    public UserOrganizationJob findUserOrganizationJob(UserOrganizationJob userOrganizationJob) {
+////        return getUserRepository().findUserOrganization(
+////                userOrganizationJob.getUser(),
+////                userOrganizationJob.getOrganizationId(),
+////                userOrganizationJob.getJobId());
+//    	return null;
+//    }
 
     public User findByUsername(String username) {
         if(StringUtils.isEmpty(username)) {
@@ -276,10 +271,10 @@ public class UserService extends BaseService<User, Long> {
      * @param pageable
      * @return
      */
-    public Page<UserOrganizationJob> findUserOrganizationJobOnNotExistsOrganizationOrJob(Pageable pageable) {
-        //return getUserRepository().findUserOrganizationJobOnNotExistsOrganizationOrJob(pageable);
-    	return null;
-    }
+//    public Page<UserOrganizationJob> findUserOrganizationJobOnNotExistsOrganizationOrJob(Pageable pageable) {
+//        //return getUserRepository().findUserOrganizationJobOnNotExistsOrganizationOrJob(pageable);
+//    	return null;
+//    }
 
     /**
      * 删除用户不存在的情况的UserOrganizationJob（比如手工从数据库物理删除）。。

@@ -31,7 +31,6 @@ import com.easy555.common.web.bind.annotation.PageableDefaults;
 import com.easy555.common.web.controller.BaseCRUDController;
 import com.easy555.common.web.validate.ValidateResponse;
 import com.easy555.uc.dao.user.entity.User;
-import com.easy555.uc.dao.user.entity.UserOrganizationJob;
 import com.easy555.uc.dao.user.entity.UserStatus;
 import com.easy555.uc.service.user.UserService;
 
@@ -145,18 +144,18 @@ public class UserController extends BaseCRUDController<User, Long> {
             //仅新增/修改一个 spring会自动split（“，”）--->给数组
             if (l == 1) {
                 for (int j = 0, l2 = jobIds.length; j < l2; j++) {
-                    UserOrganizationJob userOrganizationJob = new UserOrganizationJob();
-                    userOrganizationJob.setOrganizationId(organizationIds[i]);
-                    userOrganizationJob.setJobId(jobIds[j][0]);
-                    m.addOrganizationJob(userOrganizationJob);
+//                    UserOrganizationJob userOrganizationJob = new UserOrganizationJob();
+//                    userOrganizationJob.setOrganizationId(organizationIds[i]);
+//                    userOrganizationJob.setJobId(jobIds[j][0]);
+//                    m.addOrganizationJob(userOrganizationJob);
                 }
             } else {
                 Long[] jobId = jobIds[i];
                 for (int j = 0, l2 = jobId.length; j < l2; j++) {
-                    UserOrganizationJob userOrganizationJob = new UserOrganizationJob();
-                    userOrganizationJob.setOrganizationId(organizationIds[i]);
-                    userOrganizationJob.setJobId(jobId[j]);
-                    m.addOrganizationJob(userOrganizationJob);
+//                    UserOrganizationJob userOrganizationJob = new UserOrganizationJob();
+//                    userOrganizationJob.setOrganizationId(organizationIds[i]);
+//                    userOrganizationJob.setJobId(jobId[j]);
+//                    m.addOrganizationJob(userOrganizationJob);
                 }
             }
 
