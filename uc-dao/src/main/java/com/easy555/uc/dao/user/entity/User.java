@@ -5,26 +5,27 @@
  */
 package com.easy555.uc.dao.user.entity;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.easy555.common.entity.BaseEntity;
-import com.easy555.common.plugin.entity.LogicDeleteable;
-import com.easy555.common.repository.support.annotation.EnableQueryCache;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import com.easy555.common.entity.BaseEntity;
+import com.easy555.common.plugin.entity.LogicDeleteable;
+import com.easy555.common.repository.support.annotation.EnableQueryCache;
 
 /**
  * <p>User: Zhang Kaitao
@@ -91,66 +92,7 @@ public class User extends BaseEntity<Long> implements LogicDeleteable {
      * 逻辑删除flag
      */
     private Boolean deleted = Boolean.FALSE;
-
-
-    /**
-     * 用户 组织机构 工作职务关联表
-     */
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = UserOrganizationJob.class, mappedBy = "user", orphanRemoval = true)
-    @Fetch(FetchMode.SELECT)
-    @Basic(optional = true, fetch = FetchType.EAGER)
-    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
-    //集合缓存引起的
-    @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)//集合缓存
-    @OrderBy()
-    private List<UserOrganizationJob> organizationJobs;
-
-    public User() {
-    }
-
-    public User(Long id) {
-        setId(id);
-    }
-
-
-    public List<UserOrganizationJob> getOrganizationJobs() {
-        if (organizationJobs == null) {
-            organizationJobs = Lists.newArrayList();
-        }
-        return organizationJobs;
-    }
-
-    public void addOrganizationJob(UserOrganizationJob userOrganizationJob) {
-        userOrganizationJob.setUser(this);
-        getOrganizationJobs().add(userOrganizationJob);
-    }
-
-    public void setOrganizationJobs(List<UserOrganizationJob> organizationJobs) {
-        this.organizationJobs = organizationJobs;
-    }
-
-
-    private transient Map<Long, List<UserOrganizationJob>> organizationJobsMap;
-
-    @Transient
-    public Map<Long, List<UserOrganizationJob>> getDisplayOrganizationJobs() {
-        if (organizationJobsMap != null) {
-            return organizationJobsMap;
-        }
-
-        organizationJobsMap = Maps.newHashMap();
-
-        for (UserOrganizationJob userOrganizationJob : getOrganizationJobs()) {
-            Long organizationId = userOrganizationJob.getOrganizationId();
-            List<UserOrganizationJob> userOrganizationJobList = organizationJobsMap.get(organizationId);
-            if (userOrganizationJobList == null) {
-                userOrganizationJobList = Lists.newArrayList();
-                organizationJobsMap.put(organizationId, userOrganizationJobList);
-            }
-            userOrganizationJobList.add(userOrganizationJob);
-        }
-        return organizationJobsMap;
-    }
+    
 
     public String getUsername() {
         return username;
