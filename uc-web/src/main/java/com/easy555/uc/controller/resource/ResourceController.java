@@ -41,7 +41,7 @@ public class ResourceController extends BaseTreeableController<Resource, Long> {
 
         for (Long id : ids) {
             Resource resource = baseService.findOne(id);
-            resource.setShow(newStatus);
+            resource.setVisible(newStatus);
             baseService.update(resource);
         }
 

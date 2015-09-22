@@ -39,7 +39,7 @@ alter table sys_user auto_increment=1000;
 create table sys_organization(
   id         				bigint not null auto_increment,
   name      				varchar(100),
-  type      				varchar(20),
+  organ_type				varchar(20),
   parent_id 				bigint,
   parent_ids  				varchar(200) default '',
   icon       				varchar(200),
@@ -47,7 +47,6 @@ create table sys_organization(
   visible       			bool,
   constraint pk_sys_organization primary key(id),
   index idx_sys_organization_name (name),
-  index idx_sys_organization_type (type),
   index idx_sys_organization_parent_id (parent_id),
   index idx_sys_organization_parent_ids_weight (parent_ids, weight)
 ) charset=utf8 ENGINE=InnoDB;

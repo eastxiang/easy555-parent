@@ -61,7 +61,7 @@ public class RoleService extends BaseService<Role, Long> {
 
         //TODO 如果角色很多 此处应该写查询
         for (Role role : findAll()) {
-            if (Boolean.TRUE.equals(role.getShow()) && roleIds.contains(role.getId())) {
+            if (Boolean.TRUE.equals(role.getVisible()) && roleIds.contains(role.getId())) {
                 roles.add(role);
             }
         }

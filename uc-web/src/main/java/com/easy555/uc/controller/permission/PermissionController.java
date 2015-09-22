@@ -50,7 +50,7 @@ public class PermissionController extends BaseCRUDController<Permission, Long> {
 
         for (Long id : ids) {
             Permission permission = baseService.findOne(id);
-            permission.setShow(newStatus);
+            permission.setVisible(newStatus);
             baseService.update(permission);
         }
 

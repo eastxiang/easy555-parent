@@ -35,7 +35,8 @@ public class Organization extends BaseEntity<Long> implements Treeable<Long> {
      * 组织机构类型 默认 分公司
      */
     @Enumerated(EnumType.STRING)
-    private OrganizationType type = OrganizationType.branch_office;
+    @Column(name = "organ_type")
+    private OrganizationType organType = OrganizationType.branch_office;
     /**
      * 父路径
      */
@@ -45,6 +46,9 @@ public class Organization extends BaseEntity<Long> implements Treeable<Long> {
     @Column(name = "parent_ids")
     private String parentIds;
 
+    /**
+     * 权重
+     */
     private Integer weight;
 
     /**
@@ -61,8 +65,7 @@ public class Organization extends BaseEntity<Long> implements Treeable<Long> {
     /**
      * 是否显示
      */
-    @Column(name = "is_show")
-    private Boolean show = Boolean.FALSE;
+    private Boolean visible = Boolean.FALSE;
 
     public Organization() {
     }
@@ -79,12 +82,12 @@ public class Organization extends BaseEntity<Long> implements Treeable<Long> {
         this.name = name;
     }
 
-    public OrganizationType getType() {
-        return type;
+    public OrganizationType getOrganType() {
+        return organType;
     }
 
-    public void setType(OrganizationType type) {
-        this.type = type;
+    public void setOrganType(OrganizationType type) {
+        this.organType = type;
     }
 
     public Long getParentId() {
@@ -168,12 +171,12 @@ public class Organization extends BaseEntity<Long> implements Treeable<Long> {
         this.hasChildren = hasChildren;
     }
 
-    public Boolean getShow() {
-        return show;
+    public Boolean getVisible() {
+        return visible;
     }
 
-    public void setShow(Boolean show) {
-        this.show = show;
+    public void setVisible(Boolean show) {
+        this.visible = show;
     }
 
 

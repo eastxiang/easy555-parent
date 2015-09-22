@@ -136,7 +136,7 @@ public class RoleController extends BaseCRUDController<Role, Long> {
 
         for (Long id : ids) {
             Role role = baseService.findOne(id);
-            role.setShow(newStatus);
+            role.setVisible(newStatus);
             baseService.update(role);
         }
 

@@ -5,13 +5,13 @@
  */
 package com.easy555.uc.dao.permission.entity;
 
-import com.easy555.common.entity.BaseEntity;
-import com.easy555.common.repository.support.annotation.EnableQueryCache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import com.easy555.common.entity.BaseEntity;
+import com.easy555.common.repository.support.annotation.EnableQueryCache;
 
 /**
  * 权限表
@@ -42,8 +42,7 @@ public class Permission extends BaseEntity<Long> {
     /**
      * 是否显示 也表示是否可用 为了统一 都使用这个
      */
-    @Column(name = "is_show")
-    private Boolean show = Boolean.FALSE;
+    private Boolean visible = Boolean.FALSE;
 
     public String getName() {
         return name;
@@ -69,11 +68,11 @@ public class Permission extends BaseEntity<Long> {
         this.description = description;
     }
 
-    public Boolean getShow() {
-        return show;
+    public Boolean getVisible() {
+        return visible;
     }
 
-    public void setShow(Boolean show) {
-        this.show = show;
+    public void setVisible(Boolean show) {
+        this.visible = show;
     }
 }

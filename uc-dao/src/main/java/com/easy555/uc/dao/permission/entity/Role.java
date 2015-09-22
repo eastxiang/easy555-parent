@@ -48,7 +48,6 @@ public class Role extends BaseEntity<Long> {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = RoleResourcePermission.class, mappedBy = "role", orphanRemoval = true)
     @Fetch(FetchMode.SELECT)
     @Basic(optional = true, fetch = FetchType.EAGER)
-//    @NotFound(action = NotFoundAction.IGNORE)
     @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)//集合缓存
     @OrderBy
     private List<RoleResourcePermission> resourcePermissions;
@@ -56,8 +55,8 @@ public class Role extends BaseEntity<Long> {
     /**
      * 是否显示 也表示是否可用 为了统一 都使用这个
      */
-    @Column(name = "is_show")
-    private Boolean show = Boolean.FALSE;
+    private Boolean visible = Boolean.FALSE;
+    
 
     public String getName() {
         return name;
@@ -99,11 +98,11 @@ public class Role extends BaseEntity<Long> {
         getResourcePermissions().add(roleResourcePermission);
     }
 
-    public Boolean getShow() {
-        return show;
+    public Boolean getVisible() {
+        return visible;
     }
 
-    public void setShow(Boolean show) {
-        this.show = show;
+    public void setVisible(Boolean show) {
+        this.visible = show;
     }
 }
