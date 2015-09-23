@@ -17,7 +17,7 @@
 		<tomcat.maven.version>2.2</tomcat.maven.version>
 
 		<spring.version>4.2.1.RELEASE</spring.version>
-		<spring.data.version>1.4.5.RELEASE</spring.data.version>
+		<spring.data.version>1.4.1.RELEASE</spring.data.version>
 
 		<jdk.version>1.7</jdk.version>
 		<support.basedir>${project.parent.basedir}/src/support</support.basedir>
