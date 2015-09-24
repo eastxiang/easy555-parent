@@ -141,8 +141,8 @@
 			<artifactId>h2</artifactId>
 			<version>${h2.version}</version>
 			<scope>test</scope>
-		</dependency> 
-		
+		</dependency>
+
 		<dependency>
 			<groupId>javax.el</groupId>
 			<artifactId>el-api</artifactId>
@@ -731,12 +731,44 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<tagBase></tagBase>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.9.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 		</plugins>
 	</build>
 
-	<repositories>
+	<!-- 分发管理 -->
+	<distributionManagement>
+		<!-- mvn site:deploy 部署的位置 -->
+		<site>
+			<id>local</id>
+			<name>filesystem</name>
+			<!-- 修改到磁盘的相应位置 -->
+			<url>file:~\target\site</url>
+		</site>
+	</distributionManagement>
 
+	<!-- 版本控制信息 -->
+	<scm>
+		<url>https://github.com/eastxiang/easy555-parent/</url>
+		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:eastxiang/easy555-parent.git</developerConnection>
+	</scm>
+
+	<repositories>
 		<repository>
 			<id>oschina Releases</id>
 			<name>oschina Releases</name>
