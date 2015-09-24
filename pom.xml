@@ -764,7 +764,7 @@
 	<!-- 版本控制信息 -->
 	<scm>
 		<url>https://github.com/eastxiang/easy555-parent/</url>
-		<developerConnection>scm:git:ssh://git@eastxiang/easy555-parent.git</developerConnection>
+		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
 	</scm>
 
 	<repositories>
