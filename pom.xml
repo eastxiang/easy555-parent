@@ -773,7 +773,7 @@
 	<scm>
 		<url>https://github.com/eastxiang/easy555-parent/</url>
 		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:eastxiang/easy555-main.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:eastxiang/easy555-parent.git</developerConnection>
 	</scm>
 
 	<repositories>
