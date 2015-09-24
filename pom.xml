@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.easy555</groupId>
 	<artifactId>easy555-parent</artifactId>
-	<version>0.3.2-SNAPSHOT</version>
+	<version>0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>parent</name>
 	<url>www.easy555.com</url>
@@ -745,12 +745,18 @@
 
 	<!-- 分发管理 -->
 	<distributionManagement>
+		<repository>
+            <id>local-respository</id>
+            <name>local-filesystem</name>
+            <url>file:~/target/Repository</url>
+        </repository>
+		
 		<!-- mvn site:deploy 部署的位置 -->
 		<site>
 			<id>local</id>
 			<name>filesystem</name>
 			<!-- 修改到磁盘的相应位置 -->
-			<url>file:~\target\site</url>
+			<url>file:~/target/site</url>
 		</site>
 	</distributionManagement>
 
