@@ -434,13 +434,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- 内部工程依赖 相关jar包 -->
-			<dependency>
-				<groupId>com.easy555</groupId>
-				<artifactId>e5-common</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
-			</dependency>
-
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
