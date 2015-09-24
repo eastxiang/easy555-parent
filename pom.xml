@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.easy555</groupId>
 	<artifactId>easy555-parent</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.3</version>
 	<packaging>pom</packaging>
 	<name>parent</name>
 	<url>www.easy555.com</url>
@@ -765,7 +765,7 @@
 		<url>https://github.com/eastxiang/easy555-parent/</url>
 		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
 		<developerConnection>scm:git:git@github.com:eastxiang/easy555-parent.git</developerConnection>
-		<tag>v0.1</tag>
+		<tag>v0.3</tag>
 	</scm>
 
 	<repositories>
