@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.easy555</groupId>
@@ -632,18 +633,18 @@
 	<!-- 分发管理 -->
 	<distributionManagement>
 		<repository>
-            <id>local-respository</id>
-            <name>local-filesystem</name>
-            <url>file:~/target/Repository</url>
-        </repository>
-		
-		<!-- mvn site:deploy  部署的位置 -->
-		<site>
+			<id>local-respository</id>
+			<name>local-filesystem</name>
+			<url>file:~/target/Repository</url>
+		</repository>
+
+		<!-- mvn site:deploy 部署的位置 -->
+		<!-- <site>
 			<id>local</id>
 			<name>filesystem</name>
-			<!-- 修改到磁盘的相应位置 -->
+			修改到磁盘的相应位置
 			<url>file:~/target/site</url>
-		</site>
+		</site> -->
 	</distributionManagement>
 
 	<!-- 版本控制信息 -->
