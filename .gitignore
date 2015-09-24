@@ -30,6 +30,9 @@ nb-configuration.xml
 # Maven plugins noise
 dependency-reduced-pom.xml
 pom.xml.versionsBackup
+release.properties
 
 #static files
 #static/
+
+
