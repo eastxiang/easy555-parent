@@ -747,6 +747,14 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.8.1</version>
+				<configuration>
+					<connectionType>developerConnection</connectionType>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -765,6 +773,7 @@
 	<scm>
 		<url>https://github.com/eastxiang/easy555-parent/</url>
 		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
+		<developerConnection>scm:git:ssh://git@eastxiang/easy555-parent.git</developerConnection>
 	</scm>
 
 	<repositories>
