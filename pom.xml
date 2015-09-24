@@ -751,7 +751,7 @@
             <url>file:~/target/Repository</url>
         </repository>
 		
-		<!-- mvn site:deploy 部署的位置 -->
+		<!-- mvn site:deploy  部署的位置 -->
 		<site>
 			<id>local</id>
 			<name>filesystem</name>
