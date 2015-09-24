@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.easy555</groupId>
 	<artifactId>easy555-parent</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<packaging>pom</packaging>
 	<name>parent</name>
 	<url>www.easy555.com</url>
@@ -80,13 +79,6 @@
 	</properties>
 
 	<dependencies>
-		<!-- 内部工程依赖 相关jar包 -->
-		<dependency>
-			<groupId>com.easy555</groupId>
-			<artifactId>e5-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
 		<!-- Spring 相关jar包 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -442,6 +434,13 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- 内部工程依赖 相关jar包 -->
+			<dependency>
+				<groupId>com.easy555</groupId>
+				<artifactId>e5-common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
@@ -736,7 +735,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5.2</version>
 				<configuration>
-					<tagBase></tagBase>
+					<tagBase />
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 				</configuration>
 				<dependencies>
@@ -766,7 +765,8 @@
 		<url>https://github.com/eastxiang/easy555-parent/</url>
 		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com:eastxiang/easy555-parent.git</developerConnection>
-	</scm>
+	  <tag>v0.1</tag>
+  </scm>
 
 	<repositories>
 		<repository>
