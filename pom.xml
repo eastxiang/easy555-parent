@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.easy555</groupId>
@@ -609,14 +610,13 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.2</version>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.4</version>
 				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
-					<preparationGoals>clean verify</preparationGoals>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<connectionType>developerConnection</connectionType>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -627,16 +627,16 @@
 		<repository>
 			<id>local-respository</id>
 			<name>local-filesystem</name>
-			<url>file:~/target/Repository</url>
+			<url>file:target/Repository</url>
 		</repository>
 
 		<!-- mvn site:deploy 部署的位置 -->
-		<!-- <site>
+		<site>
 			<id>local</id>
 			<name>filesystem</name>
-			修改到磁盘的相应位置
-			<url>file:~/target/site</url>
-		</site> -->
+			<!-- 修改到磁盘的相应位置 -->
+			<url>file:target/site</url>
+		</site>
 	</distributionManagement>
 
 	<!-- 版本控制信息 -->
