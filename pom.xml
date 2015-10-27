@@ -16,7 +16,7 @@
 		<jetty.version>8.1.8.v20121106</jetty.version>
 		<tomcat.maven.version>2.2</tomcat.maven.version>
 
-		<spring.version>4.2.1.RELEASE</spring.version>
+		<spring.version>4.1.8.RELEASE</spring.version>
 		<spring.data.version>1.4.1.RELEASE</spring.data.version>
 
 		<jdk.version>1.7</jdk.version>
@@ -76,7 +76,8 @@
 
 		<mysql.version>5.1.27</mysql.version>
 		<yui.compressor.version>2.4.2</yui.compressor.version>
-
+		
+		<freemarker.version>2.3.23</freemarker.version>
 	</properties>
 
 	<dependencies>
@@ -92,12 +93,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -443,6 +442,12 @@
 				<scope>import</scope>
 			</dependency>
 
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>${freemarker.version}</version>
+			</dependency>
+
 			<!-- jcaptcha 验证码 -->
 			<dependency>
 				<groupId>com.octo.captcha</groupId>
@@ -570,7 +575,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.3</version>
 				<configuration>
-					<warName>${project.artifactId}</warName>
+					<warName>${project.artifactId}-${project.version}</warName>
 				</configuration>
 			</plugin>
 
