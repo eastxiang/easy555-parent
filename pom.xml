@@ -76,7 +76,7 @@
 
 		<mysql.version>5.1.27</mysql.version>
 		<yui.compressor.version>2.4.2</yui.compressor.version>
-		
+
 		<freemarker.version>2.3.23</freemarker.version>
 	</properties>
 
@@ -487,32 +487,41 @@
 	</dependencyManagement>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.mortbay.jetty</groupId>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<version>${jetty.version}</version>
+					<configuration>
+						<reload>manual</reload>
+						<!--<scanIntervalSeconds>2</scanIntervalSeconds> -->
+						<stopPort>9999</stopPort>
+						<webAppConfig>
+							<contextPath>/${project.build.finalName}</contextPath>
+						</webAppConfig>
+						<connectors>
+							<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+								<port>8080</port>
+								<!--<maxIdleTime>60000</maxIdleTime> -->
+							</connector>
+						</connectors>
+						<!-- spring profile -->
+						<systemProperties>
+							<systemProperty>
+								<name>spring.profiles.active</name>
+								<value>development</value>
+							</systemProperty>
+						</systemProperties>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty.version}</version>
-				<configuration>
-					<reload>manual</reload>
-					<!--<scanIntervalSeconds>2</scanIntervalSeconds> -->
-					<stopPort>9999</stopPort>
-					<webAppConfig>
-						<contextPath>/${project.build.finalName}</contextPath>
-					</webAppConfig>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>9080</port>
-							<!--<maxIdleTime>60000</maxIdleTime> -->
-						</connector>
-					</connectors>
-					<!-- spring profile -->
-					<systemProperties>
-						<systemProperty>
-							<name>spring.profiles.active</name>
-							<value>development</value>
-						</systemProperty>
-					</systemProperties>
-				</configuration>
 			</plugin>
 
 			<plugin>
@@ -520,7 +529,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>${tomcat.maven.version}</version>
 				<configuration>
-					<port>9080</port>
+					<port>8080</port>
 					<path>/${project.build.finalName}</path>
 					<!-- spring profile -->
 					<systemProperties>
@@ -624,6 +633,22 @@
 					<connectionType>developerConnection</connectionType>
 				</configuration>
 			</plugin>
+
+			<!-- 版本控制 -->
+			<!-- versions:update-child-modules allowSnapshots versions:update-parent 
+				parentVersion allowSnapshots versions:set -->
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -649,7 +674,6 @@
 		<url>https://github.com/eastxiang/easy555-parent/</url>
 		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
 		<developerConnection>scm:git:git@github.com:eastxiang/easy555-parent.git</developerConnection>
-		<tag>v0.1</tag>
 	</scm>
 
 	<repositories>
@@ -664,43 +688,45 @@
 			<name>apache Repository</name>
 			<url>https://repository.apache.org/content/groups/public/</url>
 		</repository>
+
 		<repository>
 			<id>java-repo</id>
 			<name>java Repository</name>
 			<url>http://download.java.net/maven/2/</url>
 		</repository>
+
 		<repository>
 			<id>springsource-repo</id>
 			<name>SpringSource Repository</name>
 			<url>http://repo.spring.io/release/</url>
 		</repository>
-		<repository>
-			<id>springsource-repo-snapshot</id>
-			<name>SpringSource Repository</name>
-			<url>http://repo.spring.io/snapshot/</url>
-		</repository>
+
 		<repository>
 			<id>cloudhopper</id>
 			<name>Repository for Cloudhopper</name>
 			<url>http://maven.cloudhopper.com/repos/third-party/</url>
 		</repository>
+
 		<repository>
 			<id>jboss-repo-releases</id>
 			<name>Jboss Repository</name>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
 		</repository>
+
 		<repository>
 			<id>central</id>
 			<name>Maven Repository Switchboard</name>
 			<layout>default</layout>
 			<url>http://repo.maven.apache.org/maven2</url>
 		</repository>
+
 		<repository>
 			<id>maven-repo1</id>
 			<name>maven-repo1</name>
 			<layout>default</layout>
 			<url>http://repo1.maven.org/maven2/</url>
 		</repository>
+
 		<repository>
 			<id>sourceforge-releases</id>
 			<name>Sourceforge Releases</name>
@@ -708,6 +734,7 @@
 		</repository>
 
 	</repositories>
+
 	<pluginRepositories>
 
 		<pluginRepository>
@@ -721,6 +748,7 @@
 			<name>maven2 Repository</name>
 			<url>http://repo1.maven.org/maven2/</url>
 		</pluginRepository>
+
 		<pluginRepository>
 			<id>Codehaus repository</id>
 			<url>http://repository.codehaus.org/</url>
