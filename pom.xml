@@ -6,7 +6,7 @@
 	<artifactId>easy555-parent</artifactId>
 	<version>0.6.1.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>parent</name>
+	<name>e5-parent</name>
 	<url>www.easy555.com</url>
 
 	<properties>
