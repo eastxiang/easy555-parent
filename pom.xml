@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.easy555</groupId>
@@ -560,11 +561,13 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-install-plugin</artifactId>
 				<version>2.4</version>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -647,6 +650,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5.3</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -673,8 +679,8 @@
 		<url>https://github.com/eastxiang/easy555-parent/</url>
 		<connection>scm:git:git://github.com/eastxiang/easy555-parent.git</connection>
 		<developerConnection>scm:git:git@github.com:eastxiang/easy555-parent.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
 	<repositories>
 		<repository>
@@ -690,21 +696,9 @@
 		</repository>
 
 		<repository>
-			<id>java-repo</id>
-			<name>java Repository</name>
-			<url>http://download.java.net/maven/2/</url>
-		</repository>
-
-		<repository>
 			<id>springsource-repo</id>
 			<name>SpringSource Repository</name>
 			<url>http://repo.spring.io/release/</url>
-		</repository>
-
-		<repository>
-			<id>cloudhopper</id>
-			<name>Repository for Cloudhopper</name>
-			<url>http://maven.cloudhopper.com/repos/third-party/</url>
 		</repository>
 
 		<repository>
@@ -727,12 +721,6 @@
 			<url>http://repo1.maven.org/maven2/</url>
 		</repository>
 
-		<repository>
-			<id>sourceforge-releases</id>
-			<name>Sourceforge Releases</name>
-			<url>https://oss.sonatype.org/content/repositories/sourceforge-releases</url>
-		</repository>
-
 	</repositories>
 
 	<pluginRepositories>
@@ -747,11 +735,6 @@
 			<id>maven2-repo</id>
 			<name>maven2 Repository</name>
 			<url>http://repo1.maven.org/maven2/</url>
-		</pluginRepository>
-
-		<pluginRepository>
-			<id>Codehaus repository</id>
-			<url>http://repository.codehaus.org/</url>
 		</pluginRepository>
 
 	</pluginRepositories>
