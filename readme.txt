@@ -19,4 +19,6 @@ mvn --batch-mode -Dtag=my-proj-1.2 release:prepare \
      
  mvn project
      
-        
+-- modify by xiangdong readme;
+
+test readme feature
