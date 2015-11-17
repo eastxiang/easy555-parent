@@ -17,6 +17,6 @@ mvn --batch-mode -Dtag=my-proj-1.2 release:prepare \
  mvn --batch-mode -Dtag=my-proj-1.2 -Dproject.rel.org.myCompany:projectA=1.2 \
      -Dproject.dev.org.myCompany:projectA=1.3-SNAPSHOT release:prepare
      
- mvn project
+ mvn project modify by developer..
      
         
