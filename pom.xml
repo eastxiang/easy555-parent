@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.easy555</groupId>
 	<artifactId>easy555-parent</artifactId>
-	<version>0.6.1.8-SNAPSHOT</version>
+	<version><!--current-->0.6.7-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>e5-parent</name>
 	<url>www.easy555.com</url>
@@ -636,23 +636,10 @@
 				</configuration>
 			</plugin>
 
-			<!-- 版本控制 -->
-			<!-- versions:update-child-modules allowSnapshots versions:update-parent 
-				parentVersion allowSnapshots versions:set -->
-
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
 				<version>2.2</version>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
-				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
