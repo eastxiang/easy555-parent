@@ -21,7 +21,7 @@ source ../version.properties
 let release=$release+1 
 
 #更新version.release
-sedArgs="s/release.*$/release=${release}/"
+sedArgs="s/release=.*$/release=${release}/"
 sed -i ""  $sedArgs ../version.properties
 echo "release inc ${release} OK."
 

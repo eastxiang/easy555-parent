@@ -17,17 +17,17 @@ let minor=$minor+1
  
 
 #更新version.minor
-sedArgs="s/minor.*$/minor=${minor}/"
+sedArgs="s/minor=.*$/minor=${minor}/"
 sed -i ""  $sedArgs ../version.properties
 echo "minor inc ${minor} OK."
 
 #自动归零 release
-sedArgs="s/release.*$/release=0/"
+sedArgs="s/release=.*$/release=0/"
 sed -i ""  $sedArgs ../version.properties
 echo "release update 0 OK."
 
 #自动归零 regression
-sedArgs="s/regression.*$/regression=0/"
+sedArgs="s/regression=.*$/regression=0/"
 sed -i ""  $sedArgs ../version.properties
 echo "regression update 0 OK."
 

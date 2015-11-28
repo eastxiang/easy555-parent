@@ -41,7 +41,7 @@ if [ "$revision" != "SNAPSHOT" ]; then
 	let regression=$regression+1
 
 	#更新版本配置文件
-	sedArgs="s/regression.*$/regression=${regression}/"
+	sedArgs="s/regression=.*$/regression=${regression}/"
 	sed -i ""  $sedArgs ../version.properties
 	echo "version.properties update OK."
 
