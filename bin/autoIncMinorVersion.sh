@@ -33,3 +33,7 @@ echo "regression update 0 OK."
 
 #执行生成版本号
 ./autoUpdateVersion.sh
+
+git add -u
+git commit -m "version-${major}.${minor}.0"
+echo "git commit OK."

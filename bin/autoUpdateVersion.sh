@@ -47,6 +47,6 @@ if [ "$revision" != "SNAPSHOT" ]; then
 
 	#更新提交到版本库
 	git add ../version.properties
-	git commit -m "regression v${version}"
+	git commit -m "regression ${version}"
 	echo "git commit OK."
 fi
