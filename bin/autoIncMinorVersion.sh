@@ -3,6 +3,7 @@
 #调用方式
 # autoIncMinorVersion.sh
 # 自动增加minor
+# xiangdong 2015.11.20
 
 #找到该脚本的绝对路径，防止不到此目录执行脚本，导致相对路径出错
 basepath=$(cd `dirname $0`; pwd)
