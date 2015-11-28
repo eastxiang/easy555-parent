@@ -11,6 +11,9 @@
 basepath=$(cd `dirname $0`; pwd)
 cd $basepath
 
+#切换develop分支
+git checkout develop
+
 #从版本配置文件获取版本相关信息到环境变量
 source ../version.properties
 
