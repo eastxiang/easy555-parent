@@ -5,7 +5,8 @@
 # 自动发布版本
 # 1. 版本号release自动增加，并commit；
 # 2. 建立release分支
-#
+# 请在develop分支中执行
+# xiangdong 2015.11.20
 
 #找到该脚本的绝对路径，防止不到此目录执行脚本，导致相对路径出错
 basepath=$(cd `dirname $0`; pwd)
