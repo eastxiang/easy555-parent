@@ -2,6 +2,7 @@
 
 #调用方式
 # autoIncMinorVersion.sh
+# 自动增加minor
 
 #找到该脚本的绝对路径，防止不到此目录执行脚本，导致相对路径出错
 basepath=$(cd `dirname $0`; pwd)
@@ -28,3 +29,6 @@ echo "release update 0 OK."
 sedArgs="s/regression.*$/regression=0/"
 sed -i ""  $sedArgs ../version.properties
 echo "regression update 0 OK."
+
+#执行生成版本号
+./autoUpdateVersion.sh
