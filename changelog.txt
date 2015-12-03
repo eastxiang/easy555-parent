@@ -1,0 +1,10 @@
+Easy555-parent Changelog
+=========================
+
+0.4.0
+	1. auto release
+	2. 完成版本号规划
+	
+
+0.1.0
+	1. create project 参考：https://github.com/zhangkaitao/es
