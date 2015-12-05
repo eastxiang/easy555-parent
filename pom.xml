@@ -440,7 +440,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-releasetrain</artifactId>
@@ -587,16 +587,7 @@
 					</archive>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<warName>${project.artifactId}-${project.version}</warName>
-				</configuration>
-			</plugin>
-
+			
 			<!-- 单元测试 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -666,24 +657,36 @@
 			<id>oschina Releases</id>
 			<name>oschina Releases</name>
 			<url>http://maven.oschina.net/content/groups/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 
 		<repository>
 			<id>apache-repo</id>
 			<name>apache Repository</name>
 			<url>https://repository.apache.org/content/groups/public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 
 		<repository>
 			<id>springsource-repo</id>
 			<name>SpringSource Repository</name>
 			<url>http://repo.spring.io/release/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 
 		<repository>
 			<id>jboss-repo-releases</id>
 			<name>Jboss Repository</name>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 
 		<repository>
@@ -691,6 +694,9 @@
 			<name>Maven Repository Switchboard</name>
 			<layout>default</layout>
 			<url>http://repo.maven.apache.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 
 		<repository>
@@ -698,6 +704,9 @@
 			<name>maven-repo1</name>
 			<layout>default</layout>
 			<url>http://repo1.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 
 	</repositories>
