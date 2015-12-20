@@ -1,0 +1,4 @@
+1. eclipse maven debug ?
+	a.run external tools evnironment
+		MAVEN_OPTS=-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y
+	b.remote java application config.
